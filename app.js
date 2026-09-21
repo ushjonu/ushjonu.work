@@ -8,9 +8,9 @@
   var CASES = [
     {
       key: 1, sortYear: 2024,
-      tagA: "Fintech", tagAColor: "var(--accent-violet-text)", tagAChip: "var(--accent-violet-chip)",
-      tagB: "KYC", dateLabel: "2024–2025",
-      title: "Confiança verificável, sem fricção",
+      tagA: "KYC", tagAColor: "var(--accent-violet-text)", tagAChip: "var(--accent-violet-chip)",
+      tagB: "Jornada", dateLabel: "2024–2025",
+      title: "Biometria facial & revamp",
       cover: { src: "assets/img/kyc_banner.png", width: 1920, height: 1248, alt: "Tela de abertura do novo onboarding financeiro com verificação de identidade." },
       sectionMedia: {
         context: [
@@ -21,14 +21,14 @@
         ]
       },
       context: "O onboarding financeiro da plataforma precisava incorporar verificação de identidade e biometria facial como parte do processo de KYC, sem transformar a entrada num obstáculo para quem já confiava na plataforma. Meu papel foi desenhar os wireframes e entender o novo Design System a partir do novo onboarding, já que era, naquele momento, o único fluxo que seguia o novo DS.",
-      process: "Mapeamento do fluxo de onboarding existente e identificação dos pontos em que a verificação de identidade mais gerava atrito, para decidir onde a biometria facial poderia substituir etapas mais lentas. Um teste A/B comparou o KYC pré-venda com o modelo pós-venda vigente.",
-      hypothesis: "Incorporar biometria facial ao processo de KYC reduziria o tempo de verificação sem comprometer a segurança da checagem de identidade. Migrar a verificação para antes da venda melhoraria a base de usuários e tornaria toda a operação mais segura, além de seguir as determinações necessárias para operar no modelo de plataformas digitais nacional e internacionalmente.",
-      design: "Redesenho do fluxo de onboarding com biometria facial integrada ao processo de KYC. Com a biometria facial, o tempo de análise saiu de 5 dias para 10 minutos, e o teste A/B confirmou: a base de usuários com KYC pré-venda teve percentual de vendas ativas maior do que a base equivalente no modelo pós-venda."
+      process: "Mapeamento do fluxo de onboarding existente e identificação dos pontos em que a verificação de identidade mais gerava atrito, para decidir como melhorar etapas mais lentas. Um teste A/B comparou o KYC pré-venda com o modelo pós-venda vigente. Foram feitos alinhamentos, critiques e working sessions com Produto, Engenharia e outros times de Design.",
+      hypothesis: "Incorporar biometria facial ao processo de KYC reduziria o tempo de verificação aumentando a segurança da checagem de identidade. Migrar a verificação para antes da venda melhoraria a base de usuários, além de seguir as determinações necessárias para operar no modelo de plataformas digitais nacional e internacionalmente.",
+      design: "Redesenho do fluxo de onboarding com biometria facial integrada ao processo de KYC. Com a biometria facial, o tempo de análise saiu de 5 dias para até 10 minutos, e o teste A/B confirmou: a base de usuários com KYC pré-venda teve percentual de vendas ativas maior do que a base equivalente no modelo pós-venda."
     },
     {
       key: 2, sortYear: 2025,
-      tagA: "Antifraude", tagAColor: "var(--accent-pink-text)", tagAChip: "var(--accent-pink-chip)",
-      tagB: "Moonshot", dateLabel: "2025–2026",
+      tagA: "Antifraude & CBK", tagAColor: "var(--accent-pink-text)", tagAChip: "var(--accent-pink-chip)",
+      tagB: "Vignette", dateLabel: "2025–2026",
       title: "Prever a fraude antes que ela aconteça",
       cover: { src: "assets/img/contentops_processo.png", width: 2816, height: 1678, alt: "Mapa do processo de análise antifraude, construído a partir do shadowing com os agentes." },
       sectionMedia: {
@@ -38,7 +38,7 @@
           { type: "image", src: "assets/img/contentops_desenho_3.png", width: 1512, height: 982, alt: "Interface de análise de produtores: histórico e documentação do caso." }
         ]
       },
-      context: "A operação de antifraude e chargeback funcionava de forma majoritariamente reativa, agindo depois que o problema já tinha acontecido. Um projeto moonshot propôs repensar essa lógica: e se a operação pudesse antecipar a fraude antes que ela se concretizasse?",
+      context: "A operação de antifraude e chargeback funcionava de forma majoritariamente reativa, agindo depois que o problema já tinha acontecido. Um projeto de desenho de vignette propôs repensar essa lógica: e se a operação pudesse antecipar a fraude antes que ela se concretizasse?",
       process: "Comecei com um shadowing dos agentes que viviam a operação no dia a dia, mapeando cada processo, dor e insight trocado com eles. Depois, desenhei a jornada as-is de verificação dos produtos, para entender se estávamos captando todos os passos, e destrinchei o entendimento de todas as infrações possíveis e penalizáveis, com foco em não aplicar restrições excessivas que geravam estresse entre as equipes internas.",
       hypothesis: "Os agentes já sabiam, na prática, quando um produtor estava envolvido em atividade fraudulenta, mas não tinham como monitorar ou restringir sem evidências contundentes. Se os sinais que eles já reconheciam de forma intuitiva fossem sistematizados num fluxo comum, a operação poderia agir antes da fraude se completar, em vez de apenas reagir a ela.",
       design: "Um moonshot desenhado para que o sistema detectasse padrões junto com o entendimento dos próprios agentes: interface facilitada de análise dos clientes, nomenclaturas padronizadas em toda a interface, possibilidade de iniciar o monitoramento de um produtor e sinalizar o motivo, acompanhamento do processo de análise pelo próprio sistema, e documentação com histórico de cada caso; tudo num só lugar, facilitando inclusive a negociação dos Account Managers com os produtores antes de restrições mais duras. O time já conseguiu versionar a interface para o sistema atual e aplicar quick wins que não exigiam um sistema robusto, como o reembolso facilitado, uma das hipóteses de design para reduzir o chargeback: produtos de potencial fraudulento passaram a ter essa opção simplificada, ajudando a reduzir cerca de 2% o índice de chargeback."
@@ -46,8 +46,8 @@
     {
       key: 3, sortYear: 2026,
       tagA: "Fiscal", tagAColor: "var(--accent-green-text)", tagAChip: "var(--accent-green-chip)",
-      tagB: "Internacional", dateLabel: "2026",
-      title: "Um guia fiscal para impostos de outros países",
+      tagB: "Espanha", dateLabel: "2026",
+      title: "Um guia fiscal para Espanha",
       cover: { src: "assets/img/guiafiscal_banner.png", width: 1423, height: 492, alt: "Capa do guia fiscal internacional." },
       sectionMedia: {
         design: [
@@ -55,9 +55,9 @@
         ]
       },
       context: "Usuários da América Latina e da Europa enfrentavam a jornada fiscal internacional da plataforma sem nenhum apoio, cada país com suas próprias regras, e nenhuma delas explicada num só lugar. Entrevistas com usuários e um deep dive em tickets mostraram que os principais casos de dor vinham da Espanha e do México (o caso mexicano tem desdobramento próprio, tratado à parte).",
-      process: "Com a mudança do modelo de negócio para usuários fora do Brasil, seguindo a regulamentação do órgão holandês, produtores espanhóis passaram a ser afetados pela regulamentação de plataformas digitais da União Europeia, com fatores como quem emitia a invoice, a retenção de impostos e a alíquota fiscal variando conforme de onde e para onde o produtor vendia, e o tipo de produto envolvido. Antes, o produtor só precisava vender; desde 2024, essa complexidade e imprevisibilidade operacional passou a existir. Só no segundo semestre de 2025, foram identificados mais de 700 tickets relacionados à dificuldade de entender essa nova realidade.",
-      hypothesis: "Um guia fiscal construído a partir das dúvidas reais dos usuários, e não da estrutura interna do sistema, reduziria os contatos de suporte e o abandono na etapa fiscal.",
-      design: "Desenhamos um guia fiscal para que o usuário entendesse as soluções disponíveis e as regras de cada caso. Validado com as equipes de Tax e CX (muito elogiado e agradecido) o guia foi ao ar no fim do mês passado."
+      process: "Com a mudança do modelo de negócio para usuários fora do Brasil, seguindo a regulamentação do órgão regulatório holandês, produtores espanhóis passaram a ser afetados pela regulamentação de plataformas digitais da União Europeia, com fatores como quem emitia a invoice, a retenção de impostos e a alíquota fiscal variando conforme de onde e para onde o produtor vendia, e o tipo de produto envolvido. Antes, o produtor só precisava vender; desde 2024, essa complexidade e imprevisibilidade operacional passou a existir. Só no segundo semestre de 2025, foram identificados mais de 700 tickets relacionados à dificuldade de entender essa nova realidade.",
+      hypothesis: "Um guia fiscal construído a partir das dúvidas reais dos usuários, e não da estrutura interna do sistema, reduziria os contatos de suporte e o abandono na etapa fiscal. A melhoria pontual de interfaces simples ajudaria a reduzir fricção.",
+      design: "Desenhamos um guia fiscal para que o usuário entendesse as soluções disponíveis e as regras de cada caso. Validado com as equipes de Tax e CX (muito elogiado e agradecido), o guia foi ao ar no fim de agosto/2025. A melhoria da interface da Coleta de Impostos, essencial para o entendimento de algumas regras fiscais, foi ao ar em maio/2025, como um quick win da jornada fiscal para toda a base."
     },
     {
       key: 4, sortYear: 2026,
@@ -73,16 +73,16 @@
           { type: "video", src: "assets/video/mexico_video.mp4", width: 1920, height: 1248 }
         ]
       },
-      context: "O órgão regulatório do México passou a exigir que plataformas digitais emitissem obrigatoriamente o CFDI (comprovante da retenção de impostos em cada venda) para produtores pessoa jurídica com atividade fiscal no país, com foco em cessar a bitributação e mapear a receita gerada por cada produtor.",
+      context: "O órgão regulatório do México (SAT) passou a exigir que plataformas digitais emitissem obrigatoriamente o CFDI (comprovante da retenção de impostos das vendas) para produtores pessoa jurídica com atividade fiscal no país, com foco em cessar a bitributação e mapear a receita gerada por cada produtor.",
       process: "Mapeamento das exigências do SAT ponto a ponto, cruzado com o fluxo existente de pessoas jurídicas. A partir de um documento chamado CSF (o equivalente mexicano a um cartão CNPJ) seria possível reduzir bastante a carga tributária e evitar a bitributação. O desafio era que o fluxo de KYC internacional, mesmo após a virada para pré-venda, era genérico demais: a base legada podia não ter essa documentação, o onboarding internacional não pedia os documentos certos, e não havia uma forma assíncrona de atualizar os dados fiscais de quem já tinha passado pelo KYC.",
       hypothesis: "Adequar o fluxo de forma incremental, conectando a plataforma diretamente ao SAT para o envio assíncrono da CSF de quem já era verificado, permitiria atender à norma sem gerar fricção adicional para usuários que já confiavam na plataforma.",
-      design: "Fluxo de conexão direta com o SAT e envio assíncrono da CSF, permitindo a emissão do CFDI e mantendo os dados fiscais sempre atualizados na plataforma, garantindo compliance total no México."
+      design: "Ajustes de copies para novos usuários, afim de padronizar a documentação exigida no México. Fluxo de conexão direta com o SAT e envio assíncrono da CSF, permitindo a emissão do CFDI e mantendo os dados fiscais sempre atualizados na plataforma, garantindo compliance total no México."
     },
     {
       key: 5, sortYear: 2026,
       tagA: "Produto físico", tagAColor: "var(--accent-pink-text)", tagAChip: "var(--accent-pink-chip)",
-      tagB: "E-commerce", dateLabel: "2026",
-      title: "Do zero ao produto em três cliques",
+      tagB: "PoD", dateLabel: "2026",
+      title: "Poucos cliques para uma loja: criação de uma coleção a partir de uma imagem",
       cover: { src: "assets/img/threeclick_banner.png", width: 1366, height: 768, alt: "Tela inicial do fluxo 3-click-to-store: criação simplificada de produtos print on demand." },
       sectionMedia: {
         design: [
