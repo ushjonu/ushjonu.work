@@ -51,7 +51,8 @@
       cover: { src: "assets/img/guiafiscal_banner.png", width: 1423, height: 492, alt: "Capa do guia fiscal internacional." },
       sectionMedia: {
         design: [
-          { type: "video", src: "assets/video/guiafiscal_video.mp4", width: 1920, height: 1176 }
+          { type: "video", src: "assets/video/guiafiscal_video.mp4", width: 1920, height: 1176 },
+          { type: "video", src: "assets/video/guiafiscal_video_2.mp4", width: 1920, height: 970 }
         ]
       },
       context: "Usuários da América Latina e da Europa enfrentavam a jornada fiscal internacional da plataforma sem nenhum apoio, cada país com suas próprias regras, e nenhuma delas explicada num só lugar. Entrevistas com usuários e um deep dive em tickets mostraram que os principais casos de dor vinham da Espanha e do México (o caso mexicano tem desdobramento próprio, tratado à parte).",
@@ -70,7 +71,10 @@
           { type: "image", src: "assets/img/mexico_processo.png", width: 1396, height: 1594, alt: "Mapa do processo de adequação ao SAT para pessoas jurídicas no México." }
         ],
         design: [
-          { type: "video", src: "assets/video/mexico_video.mp4", width: 1920, height: 1248 }
+          { type: "video", src: "assets/video/mexico_video.mp4", width: 1920, height: 1248 },
+          { type: "image", src: "assets/img/mexico_contrato_social.png", width: 1280, height: 832, alt: "Onboarding México: envio do contrato social da pessoa jurídica." },
+          { type: "image", src: "assets/img/mexico_onb_csf.png", width: 1280, height: 832, alt: "Onboarding México: envio da Constancia de Situación Fiscal (CSF)." },
+          { type: "image", src: "assets/img/mexico_onb_sucess.png", width: 1280, height: 832, alt: "Onboarding México: confirmação de documentação enviada com sucesso." }
         ]
       },
       context: "O órgão regulatório do México (SAT) passou a exigir que plataformas digitais emitissem obrigatoriamente o CFDI (comprovante da retenção de impostos das vendas) para produtores pessoa jurídica com atividade fiscal no país, com foco em cessar a bitributação e mapear a receita gerada por cada produtor. A não emissão de CFDI (não era obrigatória) gerava uma grande dor nos usuários, que foram captadas na pesquisa.",
@@ -127,13 +131,15 @@
   }
 
   function coverHTML(c) {
-    if (!c.cover) return '<div class="placeholder-img"><span>imagem em breve</span></div>';
-    return '<img class="case-cover" src="' + c.cover.src + '" alt="" loading="lazy" width="' + c.cover.width + '" height="' + c.cover.height + '">';
+    var inner = c.cover
+      ? '<img class="case-cover" src="' + c.cover.src + '" alt="" loading="lazy" width="' + c.cover.width + '" height="' + c.cover.height + '">'
+      : '<div class="placeholder-img"><span>imagem em breve</span></div>';
+    return '<div class="case-media">' + inner + '</div>';
   }
 
   function renderCaseCardDesktop(c) {
     var fan = FAN[c._i] || FAN[FAN.length - 1];
-    var style = "width: 280px; aspect-ratio: 4 / 5; transform: rotate(" + fan.rotate + "deg) translateY(" + fan.translateY + "px); z-index: " + fan.z + ";" + (fan.marginRight !== null ? " margin-right: " + fan.marginRight + "px;" : "");
+    var style = "width: 280px; transform: rotate(" + fan.rotate + "deg) translateY(" + fan.translateY + "px); z-index: " + fan.z + ";" + (fan.marginRight !== null ? " margin-right: " + fan.marginRight + "px;" : "");
     var el = document.createElement("button");
     el.type = "button";
     el.className = "case-card";

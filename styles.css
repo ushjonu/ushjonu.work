@@ -248,7 +248,7 @@ nav.site-nav a {
 .cases-stack-desktop {
   max-width: 1200px; margin: 0 auto; padding: 40px 24px 64px 24px;
   display: flex; align-items: flex-start; justify-content: center;
-  min-height: 360px; position: relative; height: 308px;
+  position: relative;
 }
 .case-card, .case-card-m {
   appearance: none; -webkit-appearance: none; display: block; padding: 0; margin: 0;
@@ -256,30 +256,35 @@ nav.site-nav a {
 }
 .case-card:focus-visible, .case-card-m:focus-visible { outline: 3px solid var(--accent-violet); outline-offset: 3px; }
 .case-card {
-  cursor: pointer; width: 280px; aspect-ratio: 4 / 5;
+  cursor: pointer; width: 280px;
   border: 1.5px solid var(--border-card); background: var(--surface-card);
   position: relative; overflow: hidden;
   transition: transform .15s ease, box-shadow .15s ease;
   box-shadow: 4px 4px 0 rgba(24,20,15,0.06);
 }
 .case-card:hover, .case-card:focus-visible { transform: translateY(-6px) !important; border-width: 3px; z-index: 10 !important; }
-.case-card .placeholder-img {
-  position: absolute; inset: 0; background: var(--paper-200);
-  display: flex; align-items: center; justify-content: center; filter: grayscale(1);
+/* Fixed 16:9 image block on top; the info sits below it in normal flow. */
+.case-media {
+  position: relative; aspect-ratio: 16 / 9; overflow: hidden;
+  background: var(--paper-200); border-bottom: 1.5px solid var(--border-card);
 }
-.case-card .placeholder-img span { font-family: var(--font-body); font-size: 14px; color: var(--ink-faint); }
+.case-media .placeholder-img {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.case-media .placeholder-img span { font-family: var(--font-body); font-size: 14px; color: var(--ink-faint); }
 .case-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.case-card .case-info {
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 16px;
-  background: var(--surface-card); border-top: 1.5px solid var(--border-card);
-}
+.case-card .case-info, .case-card-m .case-info { padding: 16px; background: var(--surface-card); }
 .case-pos { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink-faint); margin: 0 0 4px 0; }
-.case-tags { display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap; }
+.case-tags { display: flex; gap: 4px; margin-bottom: 8px; flex-wrap: wrap; align-content: flex-start; min-height: 52px; /* two rows, so cards share a height */ }
 .case-tag {
   display: inline-block; font-family: var(--font-body); font-size: 12px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.04em; padding: 4px 12px;
 }
-.case-title { font-family: var(--font-body); font-weight: 600; font-size: 19px; line-height: 24px; color: var(--accent-green-text); margin: 0; }
+.case-title {
+  font-family: var(--font-body); font-weight: 600; font-size: 19px; line-height: 24px; color: var(--accent-green-text); margin: 0;
+  min-height: 48px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
 
 @media (max-width: 900px) {
   /* Mobile only: the head stays put under the site header while the card stack scrolls beneath it. */
@@ -292,13 +297,10 @@ nav.site-nav a {
 
 .cases-stack-mobile { --stack-gap: 24px; padding: var(--stack-gap) var(--gutter-m) 32px var(--gutter-m); }
 .case-card-m {
-  cursor: pointer; width: 100%; aspect-ratio: 4 / 3; border: 1.5px solid var(--border-card);
+  cursor: pointer; width: 100%; border: 1.5px solid var(--border-card);
   background: var(--surface-card); position: sticky; overflow: hidden;
   box-shadow: 0 -6px 16px rgba(24,20,15,0.10); margin-bottom: 24px;
 }
-.case-card-m .placeholder-img { position: absolute; inset: 0; background: var(--paper-200); display: flex; align-items: center; justify-content: center; }
-.case-card-m .placeholder-img span { font-family: var(--font-body); font-size: 14px; color: var(--ink-faint); }
-.case-card-m .case-info { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px; background: var(--surface-card); border-top: 1.5px solid var(--border-card); }
 
 /* ————————————————— Case overlay (fullscreen) ————————————————— */
 .overlay {
