@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ushjonu.work — Jo, Product Designer</title>
+<meta name="description" content="Portfólio de Jo — desenho soluções para problemas complexos. Cases de produto, fintech, antifraude, fiscal internacional e e-commerce.">
+<link rel="canonical" href="https://ushjonu.work/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ushjonu.work">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://ushjonu.work/">
+<meta property="og:title" content="ushjonu.work — Jo, Product Designer">
+<meta property="og:description" content="Desenho soluções para problemas complexos. Cases de produto, fintech, antifraude, fiscal internacional e e-commerce.">
+<meta property="og:image" content="https://ushjonu.work/assets/img/ogimage.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ushjonu.work — Jo, Product Designer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ushjonu.work — Jo, Product Designer">
+<meta name="twitter:description" content="Desenho soluções para problemas complexos. Cases de produto, fintech, antifraude, fiscal internacional e e-commerce.">
+<meta name="twitter:image" content="https://ushjonu.work/assets/img/ogimage.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ————————————————— Header ————————————————— -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="wordmark">
+      <span class="big">ushjonu</span><span class="small">.work</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#cases">Cases</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-controls="menu-drawer" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<dialog id="menu-drawer" class="drawer" aria-label="Menu">
+  <div class="drawer-top">
+    <button type="button" class="drawer-close" aria-label="Fechar menu" autofocus>✕</button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="#cases">Cases</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</dialog>
+
+<!-- ————————————————— Hero ————————————————— -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-intro">
+      <p class="hero-greeting">oi, eu sou Jo!</p>
+      <h1 class="hero-title">Desenho soluções para <em>problemas&nbsp;complexos.</em></h1>
+    </div>
+    <div class="hero-portrait">
+      <img src="assets/img/jo-portrait-2.jpg" alt="Retrato de Jo de jaqueta de couro.">
+    </div>
+  </div>
+</section>
+
+<!-- ————————————————— Cases ————————————————— -->
+<section id="cases">
+  <div class="cases-head">
+    <div class="cases-head-inner">
+      <div class="cases-copy">
+        <p class="eyebrow">Cases</p>
+        <h2 class="cases-title">todo projeto começa com uma questão</h2>
+        <p class="cases-lede">Cinco cases, cinco problemas diferentes, mas sempre a mesma sequência: <span class="highlight"><b>contexto</b>, <b>processo</b>, <b>hipótese</b> e&nbsp;<b>desenho</b>.</span></p>
+      </div>
+      <button type="button" class="sort-toggle">Mais recentes primeiro ↓</button>
+    </div>
+  </div>
+  <div id="cases-stack-desktop" class="cases-stack-desktop desktop-only"></div>
+  <div id="cases-stack-mobile" class="cases-stack-mobile mobile-only"></div>
+</section>
+
+<!-- ————————————————— Case overlay (shared) ————————————————— -->
+<dialog id="case-overlay" class="overlay" aria-labelledby="overlay-title">
+  <div class="overlay-bar">
+    <div class="overlay-bar-inner">
+      <p id="overlay-index" class="overlay-index"></p>
+      <button type="button" id="overlay-close" class="overlay-close" aria-label="Fechar" autofocus>✕</button>
+    </div>
+  </div>
+  <article class="overlay-content">
+    <nav class="overlay-nav" aria-label="Navegar entre cases">
+      <button type="button" class="overlay-nav-btn" data-nav="prev">← Anterior</button>
+      <button type="button" class="overlay-nav-btn" data-nav="next">Próximo →</button>
+    </nav>
+    <header class="overlay-head">
+      <p class="eyebrow">Case</p>
+      <h2 id="overlay-title" class="overlay-title"></h2>
+      <div id="overlay-tags" class="case-tags"></div>
+    </header>
+    <div id="overlay-media" class="overlay-media is-empty">
+      <div class="placeholder-img"><span>imagem em breve</span></div>
+    </div>
+    <div class="overlay-sections">
+      <section>
+        <p class="label">contexto</p>
+        <div class="section-body">
+          <p id="overlay-context" class="body"></p>
+          <div class="section-media is-empty" data-section-media="context"></div>
+        </div>
+      </section>
+      <section>
+        <p class="label">processo</p>
+        <div class="section-body">
+          <p id="overlay-process" class="body"></p>
+          <div class="section-media is-empty" data-section-media="process"></div>
+        </div>
+      </section>
+      <section>
+        <p class="label">hipótese</p>
+        <div class="section-body">
+          <p id="overlay-hypothesis" class="body"></p>
+          <div class="section-media is-empty" data-section-media="hypothesis"></div>
+        </div>
+      </section>
+      <section>
+        <p class="label">desenho</p>
+        <div class="section-body">
+          <p id="overlay-design" class="body"></p>
+          <div class="section-media is-empty" data-section-media="design"></div>
+        </div>
+      </section>
+    </div>
+    <nav class="overlay-nav" aria-label="Navegar entre cases">
+      <button type="button" class="overlay-nav-btn" data-nav="prev">← Anterior</button>
+      <button type="button" class="overlay-nav-btn" data-nav="next">Próximo →</button>
+    </nav>
+  </article>
+</dialog>
+
+<!-- ————————————————— Experience ————————————————— -->
+<section id="experiencia">
+  <div class="section-inner">
+    <p class="eyebrow">Experiência</p>
+    <h2 class="section-title">um pouco mais por onde passei</h2>
+
+    <div class="exp-grid">
+      <div class="exp-col">
+        <p class="exp-col-label">Profissional</p>
+        <ul class="timeline" id="timeline-prof">
+          <li>
+            <span class="dot violet"></span>
+            <p class="date">Outubro de 2024 - Atualmente</p>
+            <p class="role">Product Designer</p>
+            <p class="org">Hotmart</p>
+            <p class="desc">Revamp de onboarding financeiro da plataforma, com verificação de identidade e biometria facial como parte do processo de KYC. Shadowing com agentes de CX em busca de entender as análises de antifraude e chargeback, com foco em tornar a operação mais preditiva e menos reativa. Deep dive em tickets e confronto com entrevistas com usuários Latam e Europa para entender as dores e propor quick wins e soluções sobre a jornada fiscal internacional. Mapeamento e melhoria de acordo com as novas normas do SAT para pessoas jurídicas no México.<br>Mais recentemente, após uma reestruturação na empresa, trabalhei na frente de produtos físicos em dois fluxos: 3-click-to-store, uma jornada de criação simplificada de três produtos PoD (print on demand); e na jornada de Suplementos, num fluxo de fulfillment em alinhamento direto com Engenharia, Fiscal e Produto, com foco em dar visibilidade do sistema aos usuários e seguir as regulamentações da Anvisa.</p>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <p class="date">Março de 2024 - Setembro de 2024</p>
+            <p class="role">Product Owner</p>
+            <p class="org">dti digital</p>
+            <p class="desc">Gerenciamento de Produto para uma plataforma web servindo três redes de restaurantes nos EUA, em colaboração direta com stakeholders internacionais.</p>
+          </li>
+          <li class="timeline-extra" hidden>
+            <span class="dot"></span>
+            <p class="date">Setembro de 2023 - Março de 2024</p>
+            <p class="role">Graphic Designer</p>
+            <p class="org">H&amp;P</p>
+            <p class="desc">Criação de peças gráficas e materiais de comunicação visual para clientes diversos, com atuação em identidade visual e produção de conteúdo.</p>
+          </li>
+          <li class="timeline-extra" hidden>
+            <span class="dot"></span>
+            <p class="date">Julho de 2022 - Março de 2023</p>
+            <p class="role">Graphic Designer</p>
+            <p class="org">Inter</p>
+            <p class="desc">Desenvolvimento de peças gráficas e apoio visual para campanhas e produtos do banco digital.</p>
+          </li>
+          <li class="timeline-extra" hidden>
+            <span class="dot"></span>
+            <p class="date">Janeiro de 2019 - Julho de 2022</p>
+            <p class="role">Planning and ESG Assistant</p>
+            <p class="org">Promon Engenharia</p>
+            <p class="desc">Suporte ao planejamento de projetos de engenharia e às iniciativas de ESG da companhia.</p>
+          </li>
+          <li class="timeline-extra" hidden>
+            <span class="dot"></span>
+            <p class="date">Fevereiro de 2018 - Janeiro de 2019</p>
+            <p class="role">Planning Intern</p>
+            <p class="org">Promon Engenharia</p>
+            <p class="desc">Estágio na área de planejamento, dando suporte ao acompanhamento de cronogramas e indicadores de projetos.</p>
+          </li>
+        </ul>
+        <button type="button" class="load-more" data-load-more="timeline-prof">Carregar mais ↓</button>
+      </div>
+
+      <div class="exp-col">
+        <p class="exp-col-label">Acadêmico</p>
+        <ul class="timeline" id="timeline-acad">
+          <li>
+            <span class="dot green"></span>
+            <p class="date">2026 - Atualmente</p>
+            <p class="role">Mestrado em Design and Applied Arts</p>
+            <p class="org">UEMG</p>
+            <p class="desc">Pós-graduação stricto sensu em Design, com foco em recursos de interface para captação de atenção.</p>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <p class="date">2021 - 2025</p>
+            <p class="role">Bacharelado em Design de Produto</p>
+            <p class="org">UEMG</p>
+            <p class="desc">Formação completa em Design de Produto, desde o desenho industrial até Design de Serviços e Design Sistêmico. Participação em projetos de pesquisa e de extensão universitária, nos campos da Fotografia, Filosofia e Design.</p>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <p class="date">2023</p>
+            <p class="role">Intercâmbio Acadêmico com Licenciatura en Fotografía</p>
+            <p class="org">Universidad Provincial de Córdoba</p>
+            <p class="desc">Experiência de 1 semestre em Córdoba, na Argentina, em que pude realizar projetos interdisciplinares (Taller Integrado), design digital e aulas de fotografia.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ————————————————— Contact ————————————————— -->
+<section id="contato">
+  <div class="section-inner contact-inner">
+    <p class="eyebrow">Contato</p>
+    <h2 class="section-title">vamos conversar?</h2>
+    <p class="contact-lede">Isso foi só uma introdução,<br><span class="muted">o resto a gente pode construir junto.</span></p>
+    <div class="contact-links">
+      <a href="mailto:quei.jonu@gmail.com" class="contact-email">quei.jonu@gmail.com</a>
+      <ul class="contact-social">
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Behance</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ————————————————— Footer ————————————————— -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="#" class="footer-back">voltar ao topo ↑</a>
+    <p class="footer-copy">© 2026 ushjonu.work | todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
